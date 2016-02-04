@@ -1,0 +1,24 @@
+{
+  "name": "api_project",
+  "version": "1.0.0",
+  "description": "Api Project by Noah and Drew",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DrewParsons/API.git"
+  },
+  "author": "Drew and Noah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DrewParsons/API/issues"
+  },
+  "homepage": "https://github.com/DrewParsons/API#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongoose": "^4.4.1",
+    "unirest": "^0.4.2"
+  }
+}

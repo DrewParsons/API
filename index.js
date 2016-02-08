@@ -2,6 +2,7 @@ var express = require("express");
 var app = express();
 var Account = require('./models/accounts.js');
 var mongoose = require('mongoose');
+var unirest = require('unirest');
 
 //CURRENTLY ONLY FOR DREW PERSONALLY
 
@@ -36,4 +37,11 @@ router.get('/account', function(req, res) {
 		res.status(400).json({error:"Username Not Specified"});
 	}
 });
+
+router.put('/Username', function(req, res) {
+	var newUsername = req.query.username;
+	if(username) {
+		Canvas.findOneAndUpdate({username:username}, function)
+	}
+})
 

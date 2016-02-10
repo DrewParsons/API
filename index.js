@@ -19,7 +19,17 @@ var router  = express.Router();
 
 router.post('/register', function(req, res) {
 	var token = '4992~tEe8O3bXofFexJI7DltCv2v9kxJJcsgGZXOoOlBkGwYIiqRDEeIW6oCoWapUxGy7';
-	var Request = unirest.post('https://kentdenver.instructure.com/api/v1/courses?access_token=4992~tEe8O3bXofFexJI7DltCv2v9kxJJcsgGZXOoOlBkGwYIiqRDEeIW6oCoWapUxGy7');
+	var Request = unirest.post('https://kentdenver.instructure.com/api/v1/courses?access_token=4992~tEe8O3bXofFexJI7DltCv2v9kxJJcsgGZXOoOlBkGwYIiqRDEeIW6oCoWapUxGy7').end(function (response) {
+		console.log(response.body);
+	});
+	
+});
+
+router.post('/id', function(req, res) {
+	var token = '4992~tEe8O3bXofFexJI7DltCv2v9kxJJcsgGZXOoOlBkGwYIiqRDEeIW6oCoWapUxGy7';
+	var Request = unirest.post('https://kentdenver.instructure.com/api/v1/courses?access_token=4992~tEe8O3bXofFexJI7DltCv2v9kxJJcsgGZXOoOlBkGwYIiqRDEeIW6oCoWapUxGy7').end(function (response) {
+		console.log(response.body);
+	});
 	
 });
 
@@ -38,10 +48,23 @@ router.get('/account', function(req, res) {
 	}
 });
 
+router.get('/number', function(req, res) {
+	
+})
+
 router.put('/Username', function(req, res) {
 	var newUsername = req.query.username;
 	if(username) {
-		Canvas.findOneAndUpdate({username:username}, function)
+		Canvas.findOneAndUpdate({username:username}, function(error, result) {
+			if(error) {
+				console.log(error);
+				res.status(500).json({error:"That's an error"});
+			}
+			res.json(result);
+		});
 	}
-})
+});
+
+app.use('/api', router);
+app.listen(port)
 

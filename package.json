@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/DrewParsons/API#readme",
   "dependencies": {
+    "body-parser": "^1.14.2",
     "express": "^4.13.4",
     "mongod": "^1.3.0",
     "mongoose": "^4.4.1",
+    "mongoose-find-one-or-create": "^0.2.0",
     "unirest": "^0.4.2"
   }
 }
